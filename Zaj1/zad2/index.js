@@ -33,6 +33,6 @@ var persons = users;
 persons.push.apply(persons, admins);
 console.log(persons);
 // 3. Wypisać osoby powyżej 25 lat (patrz operator filter)
-//console.log(persons.filter((a) => a.age >= 25));
+console.log(persons.filter(function (a) { return a.age >= 25; }));
 // 4. Wypisać osoby o imieniu Adam (zaimplementować funkcję filterPersons) -> const filtered = filterPersons(persons, { name: 'Adam' });
-//console.log(filterPersons(persons, { name: "Adam" }));
+console.log(filterPersons(persons, { name: "Adam" }));
