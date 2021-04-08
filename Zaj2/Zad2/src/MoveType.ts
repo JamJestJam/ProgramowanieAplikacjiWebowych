@@ -1,7 +1,7 @@
 enum MoveType{
-    circle,
-    cross,
-    null
+    circle = 'O',
+    cross = 'X',
+    null = '-'
 }
 
 export default MoveType;

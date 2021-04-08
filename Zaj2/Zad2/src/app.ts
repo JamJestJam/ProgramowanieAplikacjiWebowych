@@ -1,3 +1,3 @@
 import Board from "./Board";
 
-new Board(10);
+new Board(5, 3);
