@@ -1,0 +1,22 @@
+$body-color: red;
+body {
+  color: $body-color;
+}
+.Line{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Field{
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid black;
+  color: white;
+  font-size: 30pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
