@@ -10,7 +10,6 @@ class Board {
     move: MoveType = MoveType.circle;
     size: number;
     winSize: number;
-    win: boolean = false;
 
     constructor(size: number, winSize: number) {
         this.size = size;
@@ -52,7 +51,7 @@ class Board {
             }
         }
 
-        if (click && click?.State() == MoveType.null && !this.win) {
+        if (click && click?.State() == MoveType.null) {
             click.MakeMove(this.move);
 
             if (this.move == MoveType.circle) this.move = MoveType.cross;
@@ -128,8 +127,9 @@ class Board {
             diagonallyX == this.winSize ||
             diagonallyY == this.winSize
         ) {
-            this.win = true;
-            console.log("wygrałeś " + move);
+            alert("wygrałeś " + move);
+            this.board.innerHTML="";
+            this.Init();
         }
     }
 }

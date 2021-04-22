@@ -10,8 +10,11 @@ class App {
     }
 
     init(): void {
-        const menuContainer = <HTMLDivElement>document.querySelector('#LeftBar'); // kontener menu dostępnych gier
-        const gameContainer = <HTMLDivElement>document.querySelector('#Game'); // kontener główny ekranu z grą
+        const menuContainer = <HTMLDivElement>(
+            document.querySelector("#LeftBar")
+        ); // kontener menu dostępnych gier
+        const gameContainer = <HTMLDivElement>document.querySelector("#Game"); // kontener główny ekranu z grą
+        const button = <HTMLSpanElement>document.querySelector("#NB3>span");
         const list = document.createElement("ul"); // lista pozycji w menu dostępnych gier
 
         const keys = Object.keys(Games).splice(
@@ -23,7 +26,7 @@ class App {
             list.appendChild(li);
             li.innerText = element;
             li.addEventListener("click", () => {
-                gameContainer.innerHTML = '';
+                gameContainer.innerHTML = "";
                 switch (element) {
                     case "TicTacToe":
                         gameContainer.appendChild(
@@ -39,6 +42,12 @@ class App {
             });
         });
 
+        button.addEventListener("click", () => {
+            if(document.body.hasAttribute('data-theme'))
+                document.body.removeAttribute('data-theme')
+            else
+                document.body.setAttribute('data-theme', 'Dark');
+        });
         // TODO: Zaimplementuj wzorzec fabryki/metody fabrykującej, tak aby na podstawie konkretnej wartości z enum
         // zwrócić obiekt gry. Z tego obiektu można następnie pobrać nazwę gry i dodać do menu oraz metodę zwracającą
         // samą grę i po kliknięciu w wybrany element listy wywoływać ją, aby doklejać zawartość do gameContainer.
