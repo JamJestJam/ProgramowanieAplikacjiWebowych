@@ -8,7 +8,6 @@ class Field {
 
     constructor(row: number, column: number) {
         this.element = document.createElement("div");
-        this.element.classList.add("Field");
         this.element.id = `F${row}_${column}`;
 
         this.row = row;

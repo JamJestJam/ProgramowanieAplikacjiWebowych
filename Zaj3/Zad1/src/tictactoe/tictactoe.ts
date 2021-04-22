@@ -1,5 +1,6 @@
 import { Game } from "../game.model";
 import Board from "./Board";
+import '../styles/_tictactoe.scss';
 
 export class TicTacToe implements Game {
     name: string;
@@ -9,7 +10,6 @@ export class TicTacToe implements Game {
     }
     getGameElement(): HTMLElement {
         const board = new Board(4, 3);
-        console.log(board.board);
         return <HTMLElement>board.board;
     }
 }

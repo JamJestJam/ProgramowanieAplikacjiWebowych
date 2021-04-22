@@ -10,8 +10,8 @@ class App {
     }
 
     init(): void {
-        const menuContainer = <HTMLDivElement>document.createElement("div"); // kontener menu dostępnych gier
-        const gameContainer = <HTMLDivElement>document.createElement("div"); // kontener główny ekranu z grą
+        const menuContainer = <HTMLDivElement>document.querySelector('#LeftBar'); // kontener menu dostępnych gier
+        const gameContainer = <HTMLDivElement>document.querySelector('#Game'); // kontener główny ekranu z grą
         const list = document.createElement("ul"); // lista pozycji w menu dostępnych gier
 
         const keys = Object.keys(Games).splice(
@@ -43,10 +43,9 @@ class App {
         // zwrócić obiekt gry. Z tego obiektu można następnie pobrać nazwę gry i dodać do menu oraz metodę zwracającą
         // samą grę i po kliknięciu w wybrany element listy wywoływać ją, aby doklejać zawartość do gameContainer.
         // Aby wyświetlić menu należy napisać pętlę, któta przeiteruje po wszystkich wartościach enum'a
-
         menuContainer.appendChild(list);
-        document.body.appendChild(menuContainer);
-        document.body.appendChild(gameContainer);
+        // document.body.appendChild(menuContainer);
+        // document.body.appendChild(gameContainer);
     }
 }
 import { format } from "node:path";

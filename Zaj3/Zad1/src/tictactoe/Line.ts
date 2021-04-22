@@ -3,7 +3,6 @@ class Line {
 
     constructor() {
         this.element = document.createElement('div');
-        this.element.classList.add("Line");
     }
 }
 
