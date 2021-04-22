@@ -12,10 +12,6 @@ class Field {
 
         this.row = row;
         this.column = column;
-
-        if ((row + column) % 2 == 0)
-            this.element.style.backgroundColor = "blue";
-        else this.element.style.backgroundColor = "aqua";
     }
 
     Equal(id: string) {
