@@ -3,8 +3,6 @@
 @import '__flexObj';
 @import '_inputObj';
 
-
-
 .Board{
     div{
         @include FlexObj();
