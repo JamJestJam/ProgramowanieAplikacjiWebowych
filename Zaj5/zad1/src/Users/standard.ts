@@ -1,4 +1,4 @@
-import { StandardAccess } from '../access/user';
+import { StandardAccess } from '../Access/user';
 import Role from './Role';
 import { User } from './user';
 

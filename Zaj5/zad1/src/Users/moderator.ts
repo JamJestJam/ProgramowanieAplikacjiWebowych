@@ -1,4 +1,4 @@
-import { ModeratorAccess } from "../access/moderator";
+import { ModeratorAccess } from "../Access/moderator";
 import { User } from "./user";
 
 @ModeratorAccess

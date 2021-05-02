@@ -1,4 +1,4 @@
-import { AdminAccess } from '../access/admin';
+import { AdminAccess } from '../Access/admin';
 import { User } from './user';
 
 @AdminAccess
