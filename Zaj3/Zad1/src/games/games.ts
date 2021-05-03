@@ -1,4 +1,5 @@
 import { BattleShips } from "../battleships/battleships";
+import { Pong } from "../pong/pong";
 import { TicTacToe } from "../tictactoe/tictactoe";
 import { Game } from "./game.model";
 import { Games } from "./games.enum";
@@ -44,6 +45,8 @@ export default class GamesControler {
                 return new BattleShips();
             case Games.TicTacToe:
                 return new TicTacToe();
+            case Games.Pong:
+                return new Pong();
         }
     }
 

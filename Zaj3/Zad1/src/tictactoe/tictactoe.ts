@@ -1,7 +1,7 @@
 import { Game } from "../games/game.model";
 import InputData from "./inputData";
-import "../styles/_tictactoe.scss";
 import { disabledFunction } from "../games/gameDecorators/disabled";
+import "../styles/_tictactoe.scss";
 
 export class TicTacToe implements Game {
     name: string;
