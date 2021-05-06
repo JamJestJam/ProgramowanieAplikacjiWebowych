@@ -37,6 +37,9 @@ class Field {
             case MoveType.cross:
                 this.element.innerText = "X";
                 break;
+            case MoveType.null:
+                this.element.innerText = "";
+                break;
         }
     }
 }

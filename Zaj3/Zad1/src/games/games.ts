@@ -3,7 +3,7 @@ import { Pong } from "../pong/pong";
 import { TicTacToe } from "../tictactoe/tictactoe";
 import { Game } from "./game.model";
 import { Games } from "./games.enum";
-
+import { logGame } from "./logGame";
 
 export default class GamesControler {
     menuContainer: HTMLDivElement;
@@ -17,11 +17,11 @@ export default class GamesControler {
     }
 
     private init() {
-        const ul = document.createElement('ul');
-        this.getListGames().forEach(game => {
-            const li = document.createElement('li');
+        const ul = document.createElement("ul");
+        this.getListGames().forEach((game) => {
+            const li = document.createElement("li");
             li.innerText = game;
-            li.addEventListener('click', this.useGame);
+            li.addEventListener("click", this.useGame);
             ul.appendChild(li);
         });
 
@@ -32,9 +32,8 @@ export default class GamesControler {
     private getListGames(): string[] {
         const list: string[] = [];
         for (var enumMember in Games) {
-            const game:Game = this.factory(<Games>enumMember);
-            if(!game?.disabled)
-                list.push(enumMember);
+            const game: Game = this.factory(<Games>enumMember);
+            if (!game?.disabled) list.push(enumMember);
         }
         return list;
     }
@@ -47,14 +46,22 @@ export default class GamesControler {
                 return new TicTacToe();
             case Games.Pong:
                 return new Pong();
+            default:
+                return new TicTacToe();
         }
+    }
+
+    @logGame
+    private createGame(gameName: string) {
+        const game = this.factory(<Games>gameName);
+        
+        this.gameContainer.innerHTML = "";
+        this.gameContainer.appendChild(game.getGameElement());
     }
 
     private useGame = (event: MouseEvent) => {
         const name = (<HTMLLIElement>event.target).innerText;
-        const game = this.factory(<Games>name);
 
-        this.gameContainer.innerHTML = "";
-        this.gameContainer.appendChild(game.getGameElement());
-    }
+        this.createGame(name);
+    };
 }

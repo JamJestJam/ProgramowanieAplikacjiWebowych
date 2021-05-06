@@ -1,5 +1,8 @@
+import { isThrowStatement } from "typescript";
 import Board from "./Board";
 import { check, max, min } from "./decorators/defaultInputValue";
+import MoveType from "./MoveType";
+import ResumeGame, { GameData } from "./ResumeGame";
 
 export default class InputData {
     element: HTMLDivElement;
@@ -25,8 +28,39 @@ export default class InputData {
 
         this.element.appendChild(input1);
         this.element.appendChild(input2);
-
         this.element.appendChild(button);
+        this.element.appendChild(document.createElement('br'));
+        this.element.appendChild(document.createElement('br'));
+        this.element.appendChild(document.createElement('br'));
+
+        new ResumeGame().getSavedGames().forEach(game=>{
+            this.element.appendChild(this.GetGame(game));
+        });
+    }
+
+    private GetGame(game: GameData){
+        const div = document.createElement('div');
+        div.innerText = game.startData;
+        div.addEventListener('click', ()=>{
+            const board = new Board(game.size, game.winSize);
+            board.start = game.startData;
+            
+            let moveType = MoveType.cross;
+            game.moves.forEach(move =>{
+                const row = Math.floor(move/game.size);
+                const column = move - row*game.size;
+
+                board.fieldList[row][column].MakeMove(moveType);
+
+                if (moveType == MoveType.circle) moveType = MoveType.cross;
+                else moveType = MoveType.circle;
+            })
+
+            this.element.innerHTML = "";
+            this.element.appendChild(board.board);
+        });
+
+        return div;
     }
 
     @min(3)

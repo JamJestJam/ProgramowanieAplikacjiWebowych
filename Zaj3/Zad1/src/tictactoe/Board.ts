@@ -3,6 +3,7 @@ import { join } from "node:path";
 import Field from "./Field";
 import Line from "./Line";
 import MoveType from "./MoveType";
+import Undo from "./undo";
 
 class Board {
     board: Element;
@@ -10,12 +11,15 @@ class Board {
     move: MoveType = MoveType.circle;
     size: number;
     winSize: number;
+    undo: Undo = new Undo();
+    start: string = Date.now().toString();
 
     constructor(size: number, winSize: number) {
         this.size = size;
         this.winSize = winSize;
         this.board = document.createElement("div");
         this.board.classList.add("Board");
+
         this.Init();
     }
 
@@ -36,6 +40,8 @@ class Board {
                 field.element.addEventListener("click", this.MakeMove);
             }
         }
+        this.undo.element.addEventListener('click', this.prevMove);
+        this.board.appendChild(this.undo.element);
     }
 
     public MakeMove = (e: MouseEvent) => {
@@ -57,9 +63,25 @@ class Board {
             if (this.move == MoveType.circle) this.move = MoveType.cross;
             else this.move = MoveType.circle;
 
+            this.undo.rememberMe(click.row * this.size + click.column, this);
             this.CheckWin(click.row, click.column);
         }
     };
+
+    prevMove = ()=>{
+        const position = this.undo.undoMove();
+        console.log(position);
+        if(position === -1)
+            return;
+
+        const row = Math.floor(position/this.size);
+        const column = position - row*this.size;
+
+        this.fieldList[row][column].MakeMove(MoveType.null);
+
+        if (this.move == MoveType.circle) this.move = MoveType.cross;
+        else this.move = MoveType.circle;
+    }
 
     CheckWin(row: number, column: number) {
         let horizontal = 1,
