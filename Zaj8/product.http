@@ -1,0 +1,27 @@
+###
+GET http://localhost:3000/products HTTP/1.1
+
+###
+
+POST http://localhost:3000/products HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Telewizor",
+    "description": "Telewizor plazmowy",
+    "price": 5000
+}
+
+###
+PUT http://localhost:3000/products HTTP/1.1
+content-type: application/json
+
+{
+    "id": "ebea28c444034b76b749ef2ed34d6d65",
+    "name": "Gra",
+    "description": "Elo",
+    "price": 100
+}
+
+###
+DELETE http://localhost:3000/products/ebea28c444034b76b749ef2ed34d6d65 HTTP/1.1

@@ -1,4 +1,3 @@
-import { isThrowStatement } from "typescript";
 import Board from "./Board";
 import { check, max, min } from "./decorators/defaultInputValue";
 import MoveType from "./MoveType";

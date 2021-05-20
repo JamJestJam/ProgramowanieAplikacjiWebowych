@@ -1,5 +1,3 @@
-import InputData from "../inputData";
-
 export function min(value: number) {
     return function (target: any, propKey: string, descriptor: PropertyDescriptor) {
         const originalFn = descriptor.value;

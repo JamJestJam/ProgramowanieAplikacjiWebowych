@@ -1,0 +1,11 @@
+:root {
+    --fieldBlack: #f5deb3;
+    --fieldWhite: #308030;
+    --fieldColor: #000;
+}
+
+[data-theme="Dark"]{
+    --fieldBlack: #4f4f4f;
+    --fieldWhite: #333;
+    --fieldColor: #fff;
+}

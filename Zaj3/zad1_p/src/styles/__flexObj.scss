@@ -1,0 +1,11 @@
+@mixin FlexObj(){
+    display: flex;
+}
+
+@mixin FlexChild($content) {
+    justify-content: $content;
+    align-items: center;
+    display: flex;
+    flex: 1;
+}
+

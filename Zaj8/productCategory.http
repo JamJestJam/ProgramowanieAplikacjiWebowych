@@ -1,0 +1,23 @@
+###
+GET http://localhost:3000/productsCategory HTTP/1.1
+
+###
+
+POST http://localhost:3000/productsCategory HTTP/1.1
+content-type: application/json
+
+{
+    "name": "AGD"
+}
+
+###
+PUT http://localhost:3000/productsCategory HTTP/1.1
+content-type: application/json
+
+{
+    "id": "b1f06ac769d04ead895cfb09f4dbd967",
+    "name": "RTV"
+}
+
+###
+DELETE http://localhost:3000/productsCategory/728f344cc3ba4735aeeeddc6dca60643 HTTP/1.1
