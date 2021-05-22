@@ -1,0 +1,58 @@
+@import '___fonts';
+@import '__tictactoeColors';
+@import '__flexObj';
+@import '_inputObj';
+
+.Board{
+    div{
+        @include FlexObj();
+        align-items: center;
+        justify-content: center;
+        color: var(--fieldColor);
+        
+        div{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid black;
+            color: white;
+            font-size: 30pt;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &:nth-child(even){
+            div{
+                &:nth-child(even){
+                    background-color: var(--fieldBlack);
+                }
+                &:nth-child(odd){
+                    background-color: var(--fieldWhite);
+                }
+            }
+        }
+
+        &:nth-child(odd){
+            div{
+                &:nth-child(even){
+                    background-color: var(--fieldWhite);
+                }
+                &:nth-child(odd){
+                    background-color: var(--fieldBlack);
+                }
+            }
+        }
+    }
+}
+
+.input{
+    @include InputObj(#000, #000, #000, #000);
+}
+
+#table{
+    td,tr,th{
+        border: 1px solid black;
+    }
+}
