@@ -1,17 +1,17 @@
 :root {
-    --Bg1: #ffffff;
-    --Bg2: #F0F0F0;
-    --Bg3: #E8E8E8;
-    --Bg4: #0381BE;
+  --Bg1: #ffffff;
+  --Bg2: #f0f0f0;
+  --Bg3: #e8e8e8;
+  --Bg4: #0381be;
 
-    --MainFont: #3E465E;
+  --MainFont: #3e465e;
 }
 
-[data-theme="Dark"]{
-    --Bg1: #666;
-    --Bg2: #333;
-    --Bg3: #444;
-    --Bg4: #0381BE;
+[data-theme="Dark"] {
+  --Bg1: #666;
+  --Bg2: #333;
+  --Bg3: #444;
+  --Bg4: #0381be;
 
-    --MainFont: #fff;
+  --MainFont: #fff;
 }

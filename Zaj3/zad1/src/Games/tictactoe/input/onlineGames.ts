@@ -3,7 +3,7 @@ import Input from "./input";
 class OnlineGames {
     div: HTMLDivElement = document.createElement('div');
 
-    constructor(createFn: ()=>void) {
+    constructor(createFn: () => void) {
         const table = document.createElement('table');
         const header = document.createElement('tr');
         const name = document.createElement('td');

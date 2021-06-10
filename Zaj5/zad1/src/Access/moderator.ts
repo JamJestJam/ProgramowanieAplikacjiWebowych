@@ -8,7 +8,7 @@ export function ModeratorAccess(constructorFn: Function): void {
 export function forModerator(target: object, propKey: string, descriptor: PropertyDescriptor) {
     const originalFn = descriptor.value;
     descriptor.value = function (...param) {
-        if(param[1] === undefined) param.push(new AccessData());
+        if (param[1] === undefined) param.push(new AccessData());
         param[1].addAllow(Role.moderator);
 
         return originalFn.apply(this, param);
@@ -19,7 +19,7 @@ export function forModerator(target: object, propKey: string, descriptor: Proper
 export function blockModerator(target: object, propKey: string, descriptor: PropertyDescriptor) {
     const originalFn = descriptor.value;
     descriptor.value = function (...param) {
-        if(param[1] === undefined) param.push(new AccessData());
+        if (param[1] === undefined) param.push(new AccessData());
         param[1].addDenny(Role.moderator);
 
         return originalFn.apply(this, param);

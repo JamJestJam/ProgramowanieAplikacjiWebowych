@@ -10,18 +10,18 @@ class MoveHistory {
     clear() {
         sessionStorage.setItem(storageName, JSON.stringify([]))
     }
-    
+
     saveMove(field: Field) {
         const storage: Field[] = JSON.parse(sessionStorage.getItem(storageName) || "[]");
         storage.push(field);
         sessionStorage.setItem(storageName, JSON.stringify(storage));
     }
-    
-    popLastMove(){
+
+    popLastMove() {
         const storage: Field[] = JSON.parse(sessionStorage.getItem(storageName) || "[]");
         const pop = storage.pop();
         sessionStorage.setItem(storageName, JSON.stringify(storage));
-        
+
         return pop;
     }
 }

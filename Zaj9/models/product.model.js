@@ -6,8 +6,8 @@ const Product = mongoose.model(
     name: String,
     description: String,
     price: Number,
-    category: {type: mongoose.Schema.Types.ObjectId, ref: 'Category'}
+    category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' }
   })
 );
 
-module.exports = Product; 
+module.exports = Product;

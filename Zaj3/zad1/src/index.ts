@@ -3,7 +3,7 @@ import ThemeMenager from "./main/themeMenager";
 import "./styles/styles.scss";
 
 class App {
-    constructor(){
+    constructor() {
         new GameMenager();
         new ThemeMenager();
     }

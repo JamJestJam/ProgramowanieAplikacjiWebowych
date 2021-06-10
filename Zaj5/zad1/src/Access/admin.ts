@@ -8,7 +8,7 @@ export function AdminAccess(constructorFn: Function): void {
 export function forAdmin(target: object, propKey: string, descriptor: PropertyDescriptor) {
     const originalFn = descriptor.value;
     descriptor.value = function (...param) {
-        if(param[1] === undefined) param.push(new AccessData());
+        if (param[1] === undefined) param.push(new AccessData());
         param[1].addAllow(Role.admin);
 
         return originalFn.apply(this, param);
@@ -19,7 +19,7 @@ export function forAdmin(target: object, propKey: string, descriptor: PropertyDe
 export function blockAdmin(target: object, propKey: string, descriptor: PropertyDescriptor) {
     const originalFn = descriptor.value;
     descriptor.value = function (...param) {
-        if(param[1] === undefined) param.push(new AccessData());
+        if (param[1] === undefined) param.push(new AccessData());
         param[1].addDenny(Role.admin);
 
         return originalFn.apply(this, param);

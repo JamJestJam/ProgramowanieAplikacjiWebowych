@@ -8,7 +8,7 @@ export function StandardAccess(constructorFn: Function): void {
 export function forStandard(target: object, propKey: string, descriptor: PropertyDescriptor) {
     const originalFn = descriptor.value;
     descriptor.value = function (...param) {
-        if(param[1] === undefined) param.push(new AccessData());
+        if (param[1] === undefined) param.push(new AccessData());
         param[1].addAllow(Role.user);
 
         return originalFn.apply(this, param);
@@ -19,7 +19,7 @@ export function forStandard(target: object, propKey: string, descriptor: Propert
 export function blockStandard(target: object, propKey: string, descriptor: PropertyDescriptor) {
     const originalFn = descriptor.value;
     descriptor.value = function (...param) {
-        if(param[1] === undefined) param.push(new AccessData());
+        if (param[1] === undefined) param.push(new AccessData());
         param[1].addDenny(Role.user);
 
         return originalFn.apply(this, param);

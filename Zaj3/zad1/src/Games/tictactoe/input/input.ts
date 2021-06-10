@@ -1,7 +1,7 @@
 class Input {
     element = document.createElement('div');
 
-    constructor(name: string, id: string, type:"number"|"text" = "number") {
+    constructor(name: string, id: string, type: "number" | "text" = "number") {
         const input = document.createElement("input");
         const label = document.createElement("label");
 

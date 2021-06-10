@@ -55,11 +55,11 @@ export default class Pallete implements IGameObj, ICollision {
 
     private inTopBottom(ball: ball) {
         //top
-        if (ball.posY - Ball.height / 2 > this.position + Pallete.height / 2){
+        if (ball.posY - Ball.height / 2 > this.position + Pallete.height / 2) {
             console.log("za wysoko")
             return false;
         }
-        if (ball.posY + Ball.height / 2 < this.position - Pallete.height / 2){
+        if (ball.posY + Ball.height / 2 < this.position - Pallete.height / 2) {
             console.log("Za nisko")
             return false;
         }

@@ -94,12 +94,12 @@ class GameControler {
             const cd3 = this.calcCount(d3);
             const cd4 = this.calcCount(d4);
 
-            if (cd1 >= this.logicBoard.winSize || cd2 >= this.logicBoard.winSize  || cd3 >= this.logicBoard.winSize || cd4 >= this.logicBoard.winSize )
+            if (cd1 >= this.logicBoard.winSize || cd2 >= this.logicBoard.winSize || cd3 >= this.logicBoard.winSize || cd4 >= this.logicBoard.winSize)
                 this.win();
         }
 
-        const empty = this.logicBoard.fields.filter(a=>a.status === FieldEnum.empty);
-        if(empty.length === 0)
+        const empty = this.logicBoard.fields.filter(a => a.status === FieldEnum.empty);
+        if (empty.length === 0)
             this.drawFn();
     }
 
@@ -122,17 +122,17 @@ class GameControler {
         alert("Wygrałeś");
         this.endGame();
     }
-    
+
     private drawFn() {
         alert("Remis");
         this.endGame();
     }
 
-    private endGame(){
+    private endGame() {
         this.saveGame.deleteGame(this.logicBoard);
         const parent = this.board.parentElement;
-        if(parent){
-            parent.innerHTML="";
+        if (parent) {
+            parent.innerHTML = "";
             parent.appendChild(new InputSize().content);
         }
     }

@@ -28,7 +28,7 @@ function logPerson(person: Person) {
 
 function filterPersons(persons: Person[], criteria: any): Person[] {
     return persons.filter((person) =>
-        Object.keys(criteria).every((key) =>{
+        Object.keys(criteria).every((key) => {
             person[key] === criteria[key]
         })
     );

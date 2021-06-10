@@ -26,7 +26,7 @@ module.exports = [{
   externals: {
     bufferutil: "bufferutil",
     "utf-8-validate": "utf-8-validate",
-  }  
+  }
 },
 {
   mode: "development",
@@ -44,7 +44,8 @@ module.exports = [{
       {
         patterns: [
           { from: path.resolve(__dirname, "src/index.html"), to: path.resolve(__dirname, "dist") }
-        ]}
+        ]
+      }
     )
   ],
   module: {

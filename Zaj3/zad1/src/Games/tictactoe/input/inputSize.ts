@@ -49,7 +49,7 @@ class InputSize {
         }
     }
 
-    getOnline=()=>{
+    getOnline = () => {
         const in1 = document.querySelector<HTMLInputElement>('#size1');
         const in2 = document.querySelector<HTMLInputElement>('#size2');
         const name = document.querySelector<HTMLInputElement>('#serverName');
@@ -60,7 +60,7 @@ class InputSize {
     @min(3)
     @max(10)
     @check
-    createOnlineGame(size1: number, size2: number, name: string):void {
+    createOnlineGame(size1: number, size2: number, name: string): void {
         const parent = this.content.parentElement;
         if (parent) {
             parent.innerHTML = "";

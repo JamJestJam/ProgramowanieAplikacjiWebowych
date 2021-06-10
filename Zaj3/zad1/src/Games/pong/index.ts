@@ -5,8 +5,8 @@ import "../../styles/_pong.scss";
 export class Pong implements IGame {
     name: string;
 
-    constructor(){
-        this.name="Pong"
+    constructor() {
+        this.name = "Pong"
     }
 
     getGameElement() {

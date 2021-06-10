@@ -17,7 +17,7 @@ class GameMenager {
     const list: string[] = [];
     for (const enumMember in GameEnum) {
       const game = this.getGame(<GameEnum>enumMember);
-      if (game?.disabled === undefined){
+      if (game?.disabled === undefined) {
         list.push(enumMember);
       }
     }

@@ -22,8 +22,8 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
   const find = categories.find(a => a.id === req.params.id);
-  if(find){
+  if (find) {
     categories.splice(categories.indexOf(find), 1);
     res.status(200).send("Deleted");
-  }else res.status(404).send();
+  } else res.status(404).send();
 }

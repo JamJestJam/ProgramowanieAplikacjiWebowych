@@ -18,26 +18,26 @@ class ResumeGame {
     updateGame(board: Board) {
         const games: Board[] = JSON.parse(localStorage.getItem(storageName) || "[]");
         const game = games.find(a => a.guid == board.guid);
-        
+
         if (game) {
             game.fields = board.fields;
             game.lastUpdate = new Date().toISOString();
             localStorage.setItem(storageName, JSON.stringify(games));
         }
     }
-    
-    deleteGame(board: Board){
+
+    deleteGame(board: Board) {
         const games: Board[] = JSON.parse(localStorage.getItem(storageName) || "[]");
-        
-        const id = games.findIndex(a=>a.guid === board.guid);
-        if(id!==-1){
-            games.splice(id,1);
+
+        const id = games.findIndex(a => a.guid === board.guid);
+        if (id !== -1) {
+            games.splice(id, 1);
             console.log(games);
             localStorage.setItem(storageName, JSON.stringify(games));
         }
     }
 
-    getAllGames(){
+    getAllGames() {
         const games: Board[] = JSON.parse(localStorage.getItem(storageName) || "[]");
         return games;
     }

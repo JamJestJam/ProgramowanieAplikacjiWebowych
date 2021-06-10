@@ -1,5 +1,5 @@
 class Line {
-    element:Element;
+    element: Element;
 
     constructor() {
         this.element = document.createElement('div');

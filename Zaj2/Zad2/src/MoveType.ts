@@ -1,4 +1,4 @@
-enum MoveType{
+enum MoveType {
     circle = 'O',
     cross = 'X',
     null = '-'

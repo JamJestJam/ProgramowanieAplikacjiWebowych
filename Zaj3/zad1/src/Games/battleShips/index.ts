@@ -6,7 +6,7 @@ class BattleShips implements IGame {
   name: string;
 
   constructor() {
-      this.name = "BattleShips";
+    this.name = "BattleShips";
   }
 
   getGameElement = (): HTMLDivElement => {

@@ -1,7 +1,7 @@
-export default class TrackPad{
-    element:HTMLDivElement;
+export default class TrackPad {
+    element: HTMLDivElement;
 
-    constructor(){
+    constructor() {
         this.element = document.createElement('div');
         this.element.classList.add('PongTrackPad');
     }

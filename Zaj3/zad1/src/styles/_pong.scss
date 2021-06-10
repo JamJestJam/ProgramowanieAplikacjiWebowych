@@ -1,59 +1,59 @@
-@import '__PongColors';
+@import "__PongColors";
 
-.PongBoard{
-    width: 600px;
-    height: 600px;
-    background-color: var(--PongBoard);
-    position: relative;
+.PongBoard {
+  width: 600px;
+  height: 600px;
+  background-color: var(--PongBoard);
+  position: relative;
 }
 
-.Pong{
-    background-color: var(--PongPallete);
-    width: 20px;
-    height: 80px;
-    position: absolute;
-    top: 300px;
-    border-radius: 0 50px 50px 0;
+.Pong {
+  background-color: var(--PongPallete);
+  width: 20px;
+  height: 80px;
+  position: absolute;
+  top: 300px;
+  border-radius: 0 50px 50px 0;
 
-    &:nth-child(even){
-        right: 0;
-        transform: rotateZ(180deg) translateY(50%);
-    }
-    &:nth-child(odd){
-        left: 0;
-        transform: translateY(-50%);
-    }
-}
-
-.PongBall{
-    background-color: var(--PongBall);
-    border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    top: 300px;
-    left: 300px;
-    position: absolute;
-    transform: translateY(-50%) translateX(-50%);
-}
-
-.PongTrackPad{
-    width: 600px;
-    height: 600px;
-    background: transparent;
-}
-
-.trackBlue{
-    position: absolute;
+  &:nth-child(even) {
+    right: 0;
+    transform: rotateZ(180deg) translateY(50%);
+  }
+  &:nth-child(odd) {
     left: 0;
-    width: 600px;
-    height: 2px;
-    background-color: blue;
+    transform: translateY(-50%);
+  }
 }
 
-.trackRed{
-    position: absolute;
-    left: 0;
-    width: 600px;
-    height: 2px;
-    background-color: red;
+.PongBall {
+  background-color: var(--PongBall);
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  top: 300px;
+  left: 300px;
+  position: absolute;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.PongTrackPad {
+  width: 600px;
+  height: 600px;
+  background: transparent;
+}
+
+.trackBlue {
+  position: absolute;
+  left: 0;
+  width: 600px;
+  height: 2px;
+  background-color: blue;
+}
+
+.trackRed {
+  position: absolute;
+  left: 0;
+  width: 600px;
+  height: 2px;
+  background-color: red;
 }

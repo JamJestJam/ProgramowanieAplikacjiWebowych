@@ -7,7 +7,7 @@ class TicTacToe implements IGame {
   name: string;
 
   constructor() {
-      this.name = "TicTacToe";
+    this.name = "TicTacToe";
   }
 
   getGameElement = (): HTMLDivElement => {
