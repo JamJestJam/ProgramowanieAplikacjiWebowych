@@ -15,6 +15,7 @@ class GameList {
         names.forEach(name => {
             const li = document.createElement("li");
             li.innerHTML = name;
+            li.id = name;
             li.addEventListener("click", () => {
                 this.playFn(<gameEnum>name);
             })
