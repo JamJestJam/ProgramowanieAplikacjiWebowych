@@ -4,7 +4,7 @@ function watch(target: object, propKey: string, descriptor: PropertyDescriptor) 
     const args = [];
     args.push(param);
     console.log(`User: ${param} wants ${propKey}`);
-    return originalFn.apply(this, args);
+    //return originalFn.apply(this, args);
   };
   return descriptor;
 }

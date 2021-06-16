@@ -6,3 +6,12 @@ module.exports = function (app) {
   app.put("/products", controller.update);
   app.delete("/products", controller.delete);
 };
+
+class Osoba{
+  imie: string;
+  nazwisko: string;
+  constructor(){
+    this.imie = "";
+    this.nazwisko = "";
+  }
+}
